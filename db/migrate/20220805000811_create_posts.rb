@@ -7,7 +7,6 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :details
       t.integer :mapper_id
       t.timestamps
-
     end
   end
 end
