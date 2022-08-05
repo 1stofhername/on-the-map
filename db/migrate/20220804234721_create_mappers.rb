@@ -1,4 +1,4 @@
-class CreatesMappers < ActiveRecord::Migration[6.1]
+class CreateMappers < ActiveRecord::Migration[6.1]
   def change
     create_table :mappers do |t|
       t.string :first_name
