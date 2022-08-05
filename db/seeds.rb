@@ -22,7 +22,7 @@ end
 
 30.times do
     MapperTracker.create(
-        mapper_id: rand(1..10)
+        mapper_id: rand(1..10),
         tracker_id: rand(1..30)
     )
 end
