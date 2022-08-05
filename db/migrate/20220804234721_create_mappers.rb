@@ -4,7 +4,7 @@ class CreateMappers < ActiveRecord::Migration[6.1]
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.string :text
+      t.string :headline
       t.string :category
       t.timestamps
     end
