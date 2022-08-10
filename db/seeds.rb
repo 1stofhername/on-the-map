@@ -9,6 +9,7 @@ puts "🌱 Seeding spices..."
         email: Faker::Internet.email,
         headline: Faker::Lorem.sentence,
         category: ["jet-setter", "vanlifer", "traveler"][rand(0..2)]
+        password: Faker::Internet::password
     )
 end
 
@@ -32,6 +33,7 @@ end
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         email: Faker::Internet.email
+        password: Faker::Internet::password
     )
 end
 
