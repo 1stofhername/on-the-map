@@ -5,4 +5,13 @@ class Tracker < ActiveRecord::Base
     def get_mappers
         self.mappers
     end
+
+    def get_feed
+        feed = []
+        self.mappers.each do |m|
+            feed << m.posts
+        end
+        feed
+    end
+
 end
