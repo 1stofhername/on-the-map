@@ -6,6 +6,7 @@ class CreateMappers < ActiveRecord::Migration[6.1]
       t.string :email
       t.string :headline
       t.string :category
+      t.string :profile_img_link
       t.timestamps
     end
   end
