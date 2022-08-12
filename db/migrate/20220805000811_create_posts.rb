@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :media_link
       t.integer :location
       t.string :details
-      t.integer :mapper_id
+      t.integer :user_id
       t.timestamps
     end
   end

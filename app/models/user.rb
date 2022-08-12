@@ -1,10 +1,12 @@
-class Creator < ActiveRecord::Base
-    has_many :creator_followers
-    has_many :followers, through: :creator_followers
+class User < ActiveRecord::Base
+    has_many :followers
+    # has_many :users, through: :followers
     has_many :posts
 
     def get_followers
-        self.followers
+        self.followers.each do |f|
+            puts :follower_id
+        end
     end
 
     def tracker_count

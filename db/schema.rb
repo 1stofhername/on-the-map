@@ -10,34 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_10_220111) do
-
-  create_table "creator_followers", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "creator_id"
-    t.datetime "created_at"
-  end
-
-  create_table "creators", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "headline"
-    t.string "category"
-    t.string "profile_img_link"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
-  end
+ActiveRecord::Schema.define(version: 2022_08_05_000811) do
 
   create_table "followers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "profile_img_link"
+    t.integer "user_id"
+    t.integer "follower_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -45,7 +24,20 @@ ActiveRecord::Schema.define(version: 2022_08_10_220111) do
     t.string "media_link"
     t.integer "location"
     t.string "details"
-    t.integer "mapper_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "headline"
+    t.string "category"
+    t.string "password"
+    t.string "profile_img_link"
+    t.integer "follower_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,17 +1,16 @@
 class Follower < ActiveRecord::Base
-    has_many :creator_followers
-    has_many :creators, through: :creator_followers
+    belongs_to :user
 
-    def get_creators
-        self.creators
+    def get_identity
+        User.find(follower_id)
     end
 
-    def get_feed
-        feed = []
-        self.creators.each do |c|
-            feed << c.posts
-        end
-        feed
-    end
+    # def get_feed
+    #     feed = []
+    #     self.creators.each do |c|
+    #         feed << c.posts
+    #     end
+    #     feed
+    # end
 
 end
