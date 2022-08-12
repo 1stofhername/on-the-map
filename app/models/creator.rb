@@ -1,6 +1,6 @@
-class Mapper < ActiveRecord::Base
-    has_many :mapper_trackers
-    has_many :trackers, through: :mapper_trackers
+class Creator < ActiveRecord::Base
+    has_many :creator_followers
+    has_many :followers, through: :creator_followers
     has_many :posts
 
     def get_trackers
