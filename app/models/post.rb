@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-    belongs_to :mapper
+    belongs_to :creator
 end
