@@ -3,12 +3,12 @@ class Creator < ActiveRecord::Base
     has_many :followers, through: :creator_followers
     has_many :posts
 
-    def get_trackers
-        self.trackers
+    def get_followers
+        self.followers
     end
 
     def tracker_count
-        self.trackers.length
+        self.followers.length
     end
 
     def get_posts
