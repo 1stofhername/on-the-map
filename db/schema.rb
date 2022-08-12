@@ -12,5 +12,42 @@
 
 ActiveRecord::Schema.define(version: 2022_08_10_220111) do
 
-  
+  create_table "creator_followers", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "creator_id"
+    t.datetime "created_at"
+  end
+
+  create_table "creators", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "headline"
+    t.string "category"
+    t.string "profile_img_link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password"
+  end
+
+  create_table "followers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "profile_img_link"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "password"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "media_link"
+    t.integer "location"
+    t.string "details"
+    t.integer "mapper_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end
