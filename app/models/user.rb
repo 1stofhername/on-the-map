@@ -1,15 +1,16 @@
 class User < ActiveRecord::Base
     has_many :followers
-    # has_many :users, through: :followers
     has_many :posts
 
     def get_followers
+        followers=[]
         self.followers.each do |f|
-            puts :follower_id
+            followers << f.get_identity
         end
+        followers
     end
 
-    def tracker_count
+    def follower_count
         self.followers.length
     end
 
