@@ -20,6 +20,10 @@ gem "rack-cors", "~> 1.1"
 # https://guides.rubyonrails.org/active_record_basics.html
 gem "activerecord", "~> 6.1"
 
+# A simple way to upload files from Ruby
+# https://www.rubydoc.info/gems/carrierwave/0.11.2
+gem 'carrierwave', '~> 2.0'
+
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
 gem "sinatra-activerecord", "~> 2.0"
