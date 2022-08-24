@@ -12,3 +12,5 @@ require_all 'app'
 CarrierWave.configure do |config|
     config.root = "./public"
 end
+
+
