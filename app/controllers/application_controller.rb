@@ -11,4 +11,14 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  post '/posts' do
+    post = Post.create(
+      image_file: params[:image_file],
+      location: params[:location],
+      caption: params[:caption],
+      user_id: params[:user_id]
+    )
+    post.to_json
+  end
+
 end
