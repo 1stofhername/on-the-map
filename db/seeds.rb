@@ -16,8 +16,8 @@ end
 
 50.times do
     Post.create(
-        title: Faker::Lorem.sentence,
-        details: Faker::Lorem.sentence,
+        location: Faker::Address.city,
+        caption: Faker::Lorem.sentence,
         user_id: rand(1..10)
     )
 end
