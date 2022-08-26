@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     def post_count
         self.posts.count
     end
-
+    
     def self.get_user_by_id (id)
         User.find(id)
     end

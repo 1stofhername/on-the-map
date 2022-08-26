@@ -11,6 +11,20 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
+  get '/sessions/:email&:password' do
+    user = User.find_by(email: params["email"], password: params["password"])
+    user.to_json
+  end
+
+  post '/users/signup' do
+    user = User.create(first_name: params["first_name"], last_name: params["last_name"], email: params["email"], password: params["password"], headline: params["headline"], category: params["category"])
+    user.to_json
+  end
+
+  post '/users/:email' do
+    user = User.find_by(email: params[:email], password: params[:password])
+  end
+
   post '/posts' do
     post = Post.create(
       image_file: params[:image_file],
