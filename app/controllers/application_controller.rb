@@ -23,7 +23,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/followers/:id' do
-    Follower.where(follower_id: params["id"])
+    followers=[]
+    follower_array = Follower.where(follower_id: params["id"])
+    follower_array.to_json
+    followers = follower_array.flat_map do |f|
+      User.where(id: f[:user_id])
+    end
+    followers.to_json
   end
 
   post '/users/signup' do
