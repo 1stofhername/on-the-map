@@ -1,5 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+  enable :sessions
+
   
   # Add your routes here
   get "/" do
@@ -11,9 +13,17 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
-  get '/sessions/:email&:password' do
-    user = User.find_by(email: params["email"], password: params["password"])
-    user.to_json
+  get '/login/:email&:password' do
+    @user = User.find_by(email: params["email"], password: params["password"])
+    if @user
+    @user.to_json
+    else 
+      { message: "User/password mismatch" }.to_json
+    end
+  end
+
+  get '/followers/:id' do
+    Follower.where(follower_id: params["id"])
   end
 
   post '/users/signup' do
